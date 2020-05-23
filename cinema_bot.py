@@ -19,8 +19,7 @@ if proxy_credentials:
 else:
     proxy_auth = None
 
-bot = Bot(token='1183112339:AAERFnZ5g8dMVph2dMKQeE8UZDjmIHPZZWQ',
-          proxy=proxy_host, proxy_auth=proxy_auth)
+bot = Bot(token='1183112339:AAERFnZ5g8dMVph2dMKQeE8UZDjmIHPZZWQ')
 dp = Dispatcher(bot)
 
 
