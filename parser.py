@@ -120,19 +120,24 @@ class KinopoiskParser:
         logger.info(container)
         # logger.debug(container[0].get_text())
         # logger.info(type(container))
-        href = container[0].select_one('p.pic a.js-serp-metrika').get('href')
-        # logger.info(href)
-        link_list = href.split('/')
-        logger.info(link_list)
-        link = link_list[1] + '/' + link_list[2]
-        logger.info(link)
-        return link
+        if len(container) > 0:
+            href = container[0].select_one('p.pic a.js-serp-metrika').get('href')
+            # logger.info(href)
+            link_list = href.split('/')
+            logger.info(link_list)
+            link = link_list[1] + '/' + link_list[2]
+            logger.info(link)
+            return link
+        else:
+            return 'No'
 
     def parse_all(self, query: str):
         url = 'index.php'
+        res = ''
         link = self.get_link(url=url, query=query)
-        sleep(1 + random.randint(0, 10) / 10)
-        res = self.get_block(link=link)
+        if link != 'No':
+            sleep(1 + random.randint(0, 20) / 10)
+            res = self.get_block(link=link)
         return res
 
 
