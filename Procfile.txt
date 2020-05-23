@@ -1,1 +1,1 @@
-web: python bot_virtual.py
+web: python cinema_bot.py
