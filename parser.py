@@ -131,7 +131,7 @@ class KinopoiskParser:
     def parse_all(self, query: str):
         url = 'index.php'
         link = self.get_link(url=url, query=query)
-        sleep(1 + random.randint(0, 20) / 10)
+        sleep(1 + random.randint(0, 10) / 10)
         res = self.get_block(link=link)
         return res
 
