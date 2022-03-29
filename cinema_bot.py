@@ -10,8 +10,7 @@ from parser import KinopoiskParser
 logging.basicConfig(level=logging.INFO)
 logger = logging.getLogger(__name__)
 
-proxy_host = 'socks5://178.128.203.1:1080'
-proxy_credentials = 'student:TH8FwlMMwWvbJF8FYcq0'
+TOKEN = os.environ['TG_TOKEN']
 
 if proxy_credentials:
     login, password = proxy_credentials.split(':')
@@ -19,7 +18,7 @@ if proxy_credentials:
 else:
     proxy_auth = None
 
-bot = Bot(token='1183112339:AAERFnZ5g8dMVph2dMKQeE8UZDjmIHPZZWQ')
+bot = Bot(token=TOKEN)
 dp = Dispatcher(bot)
 
 
